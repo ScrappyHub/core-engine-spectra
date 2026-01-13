@@ -1,42 +1,36 @@
-# SPECTRA — Spectral Analysis & Deterministic Frequency Instruments
+# SPECTRA — Frequency & Response Engine
 
-Engine Key: **SPECTRA**  
-Engine Role: **TRUTH_ADJACENT_COMPUTE**  
-Domain: **Spectral measurement (frequency/time-frequency)**
+SPECTRA performs deterministic frequency-domain and response computations on sealed data.
 
-SPECTRA performs deterministic spectral measurement on sealed numeric signals and fields. It produces reproducible frequency-domain outputs (FFT/PSD/band energy/coherence) with strict numeric controls.
+---
 
-## What SPECTRA Computes (Deterministic, V1)
-- FFT (real/complex), rFFT
-- Power Spectral Density (PSD): Welch / periodogram (deterministic windowing)
-- Band energy and spectral centroids
-- Cross-spectrum and coherence (deterministic)
-- Transfer functions (two-channel inputs)
-- Time-frequency: STFT (deterministic hop + window)
+## Engine Role
 
-## Determinism Contract (V1)
-SPECTRA must be bit-stable under:
-- fixed sample order
-- fixed window function
-- fixed normalization rules
-- fixed floating-point mode (**float64 only**)
-- fixed zero-padding policy
+**Engine Type:** TRUTH_ADJACENT_COMPUTE  
+**Domain:** spectral analysis + response extraction
 
-No nondeterministic sources (no RNG; no wall-clock behavior).
+---
+
+## What SPECTRA Computes (Deterministic)
+
+- FFT / STFT / Welch PSD
+- cross-spectrum, coherence, transfer functions (H(f))
+- modal frequency peaks + bandwidth (numeric descriptors only)
+- impulse/step response estimation from declared inputs
+- band-limited energy and spectral moments
+
+---
 
 ## Prohibitions
+
 SPECTRA does NOT:
 - invent data
 - infer identity, intent, or attribution
-- classify people or sources
 - publish independently
+- act as a solver of multi-domain physics (no “truth authority”)
+
+---
 
 ## Governance
-SPECTRA is governed by CORE law. All outputs MUST be sealed and manifest-bound at run finalize.
 
-## Repository Layout
-- `MANIFEST/` — manifest + input/output schema + coupling rules
-- `SEALING/` — sealing spec
-- `GOVERNANCE/` — engine governance (engine-specific rules only)
-- `CAPABILITIES/` — capability declaration (binding)
-- `RUN_BUNDLE/` — run bundle expectations (spec only)
+SPECTRA is governed by CORE law and TRUTH_ADJACENT_BASE_GOVERNANCE.md.
