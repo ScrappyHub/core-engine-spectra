@@ -1,0 +1,27 @@
+## GOVERNANCE INHERITANCE (ACKNOWLEDGEMENT)
+This engine is permanently bound by CORE governance, including:
+
+- CORE_CONSTITUTIONAL_STOP_LAYER.md
+- CORE_PLATFORM_CONSTITUTION.md
+- CORE_ENGINE_REGISTRY_AND_VERTICAL_INHERITANCE_LAW.md
+- CORE_GOVERNANCE_INDEX_CHAIN_OF_AUTHORITY.md
+- CORE_ENGINE_REGISTRY_CONTRACT.md
+
+If any content in this repository conflicts with CORE governance,
+CORE governance prevails immediately.
+
+## Scope (Engine-Specific)
+SPECTRA performs deterministic spectral measurement on sealed numeric inputs:
+- FFT / rFFT
+- PSD (Welch / periodogram) with deterministic windowing
+- Cross-spectrum and coherence
+- STFT (deterministic hop/window)
+- Band energy and spectral centroids
+- Transfer functions (two-channel inputs)
+
+## Prohibitions (Engine-Specific)
+SPECTRA MUST NOT:
+- invent data
+- infer identity, intent, attribution, or causation
+- emit classification, conclusions, or directives (vertical lens only)
+- accept peer delivery
